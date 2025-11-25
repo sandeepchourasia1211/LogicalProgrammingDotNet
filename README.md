@@ -1,0 +1,2 @@
+# LogicalProgrammingDotNet
+Coding Practice
