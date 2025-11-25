@@ -6,6 +6,7 @@ using ProgramFolder.FactorialOfANumber;
 using ProgramFolder.FactorsOrDivisorsOfANumber;
 using ProgramFolder.PerfectNumberCheck;
 using ProgramFolder.PowerOfNP;
+using ProgramFolder.StringReverse;
 using ProgramFolder.SumOfAllFactors;
 using ProgramFolder.SumOfEvenNumbers;
 using System.Security.Cryptography.X509Certificates;
@@ -31,6 +32,10 @@ namespace ProgramFolder
                 Console.WriteLine("Option 8 : Find Factorial");
                 Console.WriteLine("Option 9 : Find N power P");
                 Console.WriteLine("Option 10 : Count Alphabets, Digits, Special Characters");
+                Console.WriteLine("Option 11 : Reverse String");
+                Console.WriteLine("Option 12 : Product of Each Digit of a Number");
+                Console.WriteLine("Option 13 : Even Digit Present in a Number");
+                Console.WriteLine("Option 14 : Sum of Odd Digit of a number");
                 Console.WriteLine("------------------------------");
 
                 Console.Write("Please choose an option : ");
@@ -77,6 +82,22 @@ namespace ProgramFolder
                 else if (option == 10)
                 {
                     printCountAlphanumeric();
+                }
+                else if (option == 11)
+                {
+                    printReverseString();
+                }
+                else if (option == 12)
+                {
+                   
+                }
+                else if (option == 13)
+                {
+                   
+                }
+                else if (option == 14)
+                {
+                   
                 }
                 else
                 {
@@ -191,6 +212,17 @@ namespace ProgramFolder
 
             String s=Console.ReadLine();
             AlphaDigiCharsCount.countAlphaNumeric(s);
+        }
+
+        public static void printReverseString()
+        {
+            Console.WriteLine("Please Enter The String To Reverse : ");
+            String str=Console.ReadLine();
+
+            ReverseString rs=new ReverseString();
+            String res=rs.reverseString(str);
+
+            Console.WriteLine(res);
         }
     }
 }
