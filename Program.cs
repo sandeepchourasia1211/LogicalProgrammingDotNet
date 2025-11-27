@@ -2,10 +2,13 @@
 using ProgramFolder.CheckPrimeNumbers;
 using ProgramFolder.CountAlphaDigiCharacters;
 using ProgramFolder.Divisible_by_N__M;
+using ProgramFolder.EvenDigitPresent;
 using ProgramFolder.FactorialOfANumber;
 using ProgramFolder.FactorsOrDivisorsOfANumber;
+using ProgramFolder.OddDIgitSumOfNum;
 using ProgramFolder.PerfectNumberCheck;
 using ProgramFolder.PowerOfNP;
+using ProgramFolder.ProductOfEachDigit;
 using ProgramFolder.StringReverse;
 using ProgramFolder.SumOfAllFactors;
 using ProgramFolder.SumOfEvenNumbers;
@@ -34,7 +37,7 @@ namespace ProgramFolder
                 Console.WriteLine("Option 10 : Count Alphabets, Digits, Special Characters");
                 Console.WriteLine("Option 11 : Reverse String");
                 Console.WriteLine("Option 12 : Product of Each Digit of a Number");
-                Console.WriteLine("Option 13 : Even Digit Present in a Number");
+                Console.WriteLine("Option 13 : Count Even Digit Present in a Number");
                 Console.WriteLine("Option 14 : Sum of Odd Digit of a number");
                 Console.WriteLine("------------------------------");
 
@@ -89,15 +92,16 @@ namespace ProgramFolder
                 }
                 else if (option == 12)
                 {
-                   
+                    printProductOfEachDigit();
+
                 }
                 else if (option == 13)
                 {
-                   
+                    printCountEvenDigit();
                 }
                 else if (option == 14)
                 {
-                   
+                    printSumOddDigit();
                 }
                 else
                 {
@@ -223,6 +227,42 @@ namespace ProgramFolder
             String res=rs.reverseString(str);
 
             Console.WriteLine(res);
+        }
+
+        public static void printProductOfEachDigit()
+        {
+            Console.WriteLine("Enter the Number");
+
+            int num=Convert.ToInt32(Console.ReadLine());
+
+            EachDigitProduct eachDigitProduct= new EachDigitProduct();
+            long res=eachDigitProduct.productOfNumber(num);
+
+            Console.WriteLine($"The Product of each digit of the {num} is : {res}");
+        }
+        public static void printCountEvenDigit()
+        {
+            Console.WriteLine("Enter the Number");
+
+            int num=Convert.ToInt32(Console.ReadLine());
+
+            EvenDigit evenDigit=new EvenDigit();
+            int res = evenDigit.CountEvenDigit(num);
+
+
+            Console.WriteLine($"The Count of Even digit in the {num} is : {res}");
+        }
+        public static void printSumOddDigit()
+        {
+            Console.WriteLine("Enter the Number");
+
+            int num=Convert.ToInt32(Console.ReadLine());
+
+            SumOfOddDigit sumOfOdd=new SumOfOddDigit();
+            int res=sumOfOdd.oddSum(num);
+
+
+            Console.WriteLine($"The Sum of odd digit in the {num} is : {res}");
         }
     }
 }
